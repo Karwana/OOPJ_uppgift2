@@ -46,6 +46,26 @@ class MemberTest {
 
     }
 
+    @Test
+    void memberGetterAndSetterTest() {
+        Member m = new Member();
+
+        // Testa memberType
+        m.setMemberType("Guld");
+        assertEquals("Guld", m.getMemberType());
+
+        // Testa memberStartDate
+        LocalDate startDate = LocalDate.of(2025, 4, 13);
+        m.setMemberStartDate(startDate);
+        assertEquals(startDate, m.getMemberStartDate());
+
+        // Testa memberLatestUpdateDate
+        LocalDate latestUpdateDate = LocalDate.of(2024, 5, 11);
+        m.setMemberLatestUpdateDate(latestUpdateDate);
+        assertEquals(latestUpdateDate, m.getMemberLatestUpdateDate());
+
+    }
+
 
 
 
