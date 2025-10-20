@@ -16,6 +16,11 @@ public class Member extends Person {
         this.memberType = memberType;
     }
 
+    public boolean isActiveMember() {
+        return memberLatestUpdateDate.isAfter(LocalDate.now().minusYears(1));
+
+    }
+
     public LocalDate getMemberStartDate() {
         return memberStartDate;
     }
