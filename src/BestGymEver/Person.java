@@ -4,10 +4,10 @@ public class Person {
     private String namn;
     private String adress;
     private String mailadress;
-    private int personnummer;
+    private String personnummer;
 
     Person(){}
-    Person(String namn, String adress, String mailadress, int personnummer) {
+    Person(String namn, String adress, String mailadress, String personnummer) {
         this.namn = namn;
         this.adress = adress;
         this.mailadress = mailadress;
@@ -38,11 +38,11 @@ public class Person {
         this.mailadress = mailadress;
     }
 
-    public int getPersonnummer() {
+    public String getPersonnummer() {
         return personnummer;
     }
 
-    public void setPersonnummer(int personnummer) {
+    public void setPersonnummer(String personnummer) {
         this.personnummer = personnummer;
     }
 }
