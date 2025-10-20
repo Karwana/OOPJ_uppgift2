@@ -9,14 +9,13 @@ class PersonTest {
     Person p = new Person("Fredrik Berggren", "Skolgränd 8, 16819 Norrköping", "fredde@fakemail.se", "851020-6728");
 
    @Test
-    void testPersonConstructorAndGetter() {
+    void PersonConstructorAndGetterTest() {
 
        assertEquals("Fredrik Berggren", p.getNamn());
        assertEquals("Skolgränd 8, 16819 Norrköping", p.getAdress());
        assertEquals("fredde@fakemail.se", p.getMailadress());
        assertEquals("851020-6728", p.getPersonnummer());
        assertNotEquals("189271-3718", p.getPersonnummer());
-
 
 
    }
