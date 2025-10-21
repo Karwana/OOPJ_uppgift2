@@ -2,5 +2,6 @@ package BestGymEver;
 
 public class GymVisitWriter {
 
-    // när betalande kund dyker upp, skriv till fil ang besöket
+    private String filePath = "src/BestGymEver/gym_visits.txt";
+
 }
