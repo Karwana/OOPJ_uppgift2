@@ -35,5 +35,12 @@ public class MemberVerifier {
         return null; // medlem finns inte
     }
 
+    // Kolla medlemsstatus
+    public String verifyMemberStatus(Member m) {
+        if (m == null) return "Obehörig!";
+        if (m.isActiveMember()) return "Nuvarande medlem: " + m.getMemberType();
+        return "Före detta kund";
+    }
+
 
 }
