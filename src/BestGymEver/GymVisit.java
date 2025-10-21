@@ -13,5 +13,15 @@ public class GymVisit {
         this.visitDate = visitDate;
     }
 
+    public String getMemberName() {
+        return memberName;
+    }
 
+    public String getPersonnummer() {
+        return personnummer;
+    }
+
+    public LocalDate getVisitDate() {
+        return visitDate;
+    }
 }
