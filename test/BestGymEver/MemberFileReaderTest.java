@@ -21,7 +21,7 @@ public class MemberFileReaderTest {
 
         assertEquals(20, l.size());
 
-        // Kontrollera första medlemmen
+        // Kontrollera första medlem
         Member first = l.getFirst();
         assertEquals("Fredrik Berggren", first.getNamn());
         assertEquals("Platina", first.getMemberType());

@@ -40,6 +40,5 @@ class MemberTest {
 
         assertFalse(inactiveMemberAfterOneYear.isActiveMember());
 
-
     }
 }
