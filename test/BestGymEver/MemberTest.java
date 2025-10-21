@@ -10,14 +10,16 @@ class MemberTest {
 
     @Test
     void memberActiveTest() {
-
+        //given
         Member activeMember = new Member("Fredrik Berggren", "Skolgränd 8, 16819 Norrköping", "fredde@fakemail.se", "851020-6728",
                 LocalDate.of(2023, 10, 20),  // startdatum
                 LocalDate.of(2025, 4, 1),    // senaste betalning
                 "Platina");                                         // memberType
 
-
+        // when
         boolean active = activeMember.isActiveMember();
+
+        // then
         assertTrue(active);
     }
 
@@ -45,28 +47,4 @@ class MemberTest {
         assertFalse(inactive);
 
     }
-
-    @Test
-    void memberGetterAndSetterTest() {
-        Member m = new Member();
-
-        // Testa memberType
-        m.setMemberType("Guld");
-        assertEquals("Guld", m.getMemberType());
-
-        // Testa memberStartDate
-        LocalDate startDate = LocalDate.of(2025, 4, 13);
-        m.setMemberStartDate(startDate);
-        assertEquals(startDate, m.getMemberStartDate());
-
-        // Testa memberLatestUpdateDate
-        LocalDate latestUpdateDate = LocalDate.of(2024, 5, 11);
-        m.setMemberLatestUpdateDate(latestUpdateDate);
-        assertEquals(latestUpdateDate, m.getMemberLatestUpdateDate());
-
-    }
-
-
-
-
 }

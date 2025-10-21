@@ -24,8 +24,9 @@ public class MemberFileReader {
             }
         }
         catch (IOException e) {
-            e.printStackTrace();
-     }
+            System.err.println("Fel när fil skulle läsas in: " + e.getMessage());
+            return null;
+        }
         return memberList;
     }
 }

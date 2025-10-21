@@ -2,12 +2,12 @@ package BestGymEver;
 
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDate;
 import java.util.List;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class MemberFileReaderTest {
 
@@ -16,7 +16,7 @@ public class MemberFileReaderTest {
     Path p = Paths.get("test/BestGymEver/gym_medlemmar.txt");
 
     @Test
-    public void readToStringListTest() {
+    public void readListTest() {
         List<Member> l = r.read(p);
 
         assertEquals(20, l.size());
@@ -30,6 +30,26 @@ public class MemberFileReaderTest {
         // Kontrollera att nästa medlem INTE är Maria
         Member second = l.get(1);
         assertNotEquals("Maria Holmberg", second.getNamn());
+    }
+
+    @Test
+    public void findExistingMemberTest() {
+        Member payingMember = createDummyPayingMember();
+        List<Member> list = List.of(payingMember);
+
+        Member find = r.findMember("881231-1335");
+
+        assertEquals(payingMember, find);
+    }
+
+    private Member createDummyPayingMember() {
+        return new Member("Fredrik Berggren",
+                "Kungsgatan 8",
+                "fredrik.berggren@hotmail.com",
+                "881231-1335",
+                LocalDate.of(2019,12,12),
+                LocalDate.now().minusDays(20),
+                "Guld");
     }
 
 }
