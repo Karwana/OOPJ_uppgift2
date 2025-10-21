@@ -13,6 +13,7 @@ public class GymVisit {
         this.memberName = memberName;
         this.personnummer = personnummer;
         this.visitDate = visitDate;
+        this.visitTime = LocalTime.now();
     }
 
     public LocalTime getVisitTime() {
