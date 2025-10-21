@@ -7,12 +7,12 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class MemberVeriferTest {
+class MemberVerifierTest {
 
     MemberVerifier v = new MemberVerifier();
 
     @Test
-    public void findExistingMemberTest() {
+    void findExistingMemberTest() {
         Member payingMember = createDummyPayingMember();
         List<Member> list = List.of(payingMember);
 

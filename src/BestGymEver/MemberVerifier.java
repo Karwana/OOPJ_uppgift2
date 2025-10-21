@@ -7,6 +7,7 @@ public class MemberVerifier {
     }
 
     public Member findMember(String firstName, String lastName) {
-        return null;
+
+        return ;
     }
 }
