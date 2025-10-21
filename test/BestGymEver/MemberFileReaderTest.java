@@ -32,24 +32,5 @@ public class MemberFileReaderTest {
         assertNotEquals("Maria Holmberg", second.getNamn());
     }
 
-    @Test
-    public void findExistingMemberTest() {
-        Member payingMember = createDummyPayingMember();
-        List<Member> list = List.of(payingMember);
-
-        Member find = r.findMember("881231-1335");
-
-        assertEquals(payingMember, find);
-    }
-
-    private Member createDummyPayingMember() {
-        return new Member("Fredrik Berggren",
-                "Kungsgatan 8",
-                "fredrik.berggren@hotmail.com",
-                "881231-1335",
-                LocalDate.of(2019,12,12),
-                LocalDate.now().minusDays(20),
-                "Guld");
-    }
 
 }

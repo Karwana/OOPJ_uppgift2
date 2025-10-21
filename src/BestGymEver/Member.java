@@ -25,6 +25,7 @@ public class Member {
 
     public boolean isActiveMember() {
         return memberLatestUpdateDate.isAfter(LocalDate.now().minusYears(1));
+        // Medlem aktiv om senaste betalning var mindre än 1 år sedan
 
     }
 
@@ -48,23 +49,14 @@ public class Member {
         return memberStartDate;
     }
 
-    public void setMemberStartDate(LocalDate memberStartDate) {
-        this.memberStartDate = memberStartDate;
-    }
 
     public LocalDate getMemberLatestUpdateDate() {
         return memberLatestUpdateDate;
     }
 
-    public void setMemberLatestUpdateDate(LocalDate memberLatestUpdateDate) {
-        this.memberLatestUpdateDate = memberLatestUpdateDate;
-    }
 
     public String getMemberType() {
         return memberType;
     }
 
-    public void setMemberType(String memberType) {
-        this.memberType = memberType;
-    }
 }
