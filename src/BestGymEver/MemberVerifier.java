@@ -6,17 +6,17 @@ public class MemberVerifier {
 
     private List<Member> members;
 
-    public MemberVerifier(List<Member> members) {
-        this.members = members;
+    public MemberVerifier(List<Member> allMembers) {
+        this.members = allMembers;
     }
 
     // Sök personnummer
     public Member findMember(String personNummer) {
         if (personNummer == null) return null;
 
-        for (Member member : members) {
-            if (personNummer.equals(member.getPersonnummer())) {
-                return member;
+        for (Member currentMember : members) {
+            if (personNummer.equals(currentMember.getPersonnummer())) {
+                return currentMember;
             }
         }
         return null; // medlem finns inte
@@ -27,9 +27,9 @@ public class MemberVerifier {
         if (firstName == null || lastName == null) return null;
 
         String fullName = firstName + " " + lastName;
-        for (Member member : members) { // <-- här var felet
-            if (fullName.equalsIgnoreCase(member.getNamn())) {
-                return member;
+        for (Member currentMember : members) { // <-- här var felet
+            if (fullName.equalsIgnoreCase(currentMember.getNamn())) {
+                return currentMember;
             }
         }
         return null; // medlem finns inte
