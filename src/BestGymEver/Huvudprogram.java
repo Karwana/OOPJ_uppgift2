@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Huvudprogram {
     void main() {
 
-        IO.println("BestGymEver Member Verifier");
+        IO.println("==BestGymEver Member Verifier==");
         Scanner sc = new Scanner(System.in);
 
         //ladda in lista
