@@ -5,7 +5,6 @@ import java.util.List;
 public class MemberVerifier {
 
     private List<Member> members;
-
     public MemberVerifier(List<Member> allMembers) {
         this.members = allMembers;
     }

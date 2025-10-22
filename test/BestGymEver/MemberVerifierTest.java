@@ -10,38 +10,38 @@ import static org.junit.jupiter.api.Assertions.*;
 class MemberVerifierTest {
 
     @Test
-    void findMemberExists() {
+    void findMemberExistsTest() {
         Member activeMemberFredrik = new Member("Fredrik Berggren", "Skolgränd 8", "fredde@fakemail.se",
                 "851020-6728", LocalDate.of(2023,10,20), LocalDate.now().minusDays(20), "Platina");
 
-        MemberVerifier memberVerifier = new MemberVerifier(List.of(activeMemberFredrik));
+        MemberVerifier memberExists = new MemberVerifier(List.of(activeMemberFredrik));
 
         // Testa att medlem med personnummer finns
-        assertEquals(activeMemberFredrik, memberVerifier.findMember("851020-6728"));
+        assertEquals(activeMemberFredrik, memberExists.findMember("851020-6728"));
     }
 
     @Test
-    void findMemberNotExists() {
+    void findMemberNotExistsTest() {
         Member fredrik = new Member("Fredrik Berggren", "Skolgränd 8", "fredde@fakemail.se",
                 "851020-6728", LocalDate.of(2023,10,20), LocalDate.now().minusDays(20), "Platina");
 
-        MemberVerifier verifier = new MemberVerifier(List.of(fredrik));
+        MemberVerifier memberNotExists = new MemberVerifier(List.of(fredrik));
 
         // Testa att medlem med okänt personnummer inte finns
-        assertNull(verifier.findMember("000000-0000"));
+        assertNull(memberNotExists.findMember("000000-0000"));
     }
 
     @Test
-    void verifyMemberStatus() {
+    void verifyMemberStatusTest() {
         Member activeMember = new Member("Fredrik Berggren", "Skolgränd 8", "fredde@fakemail.se",
                 "851020-6728", LocalDate.of(2023, 10, 20), LocalDate.now().minusDays(20), "Platina");
 
-        MemberVerifier verifier = new MemberVerifier(List.of(activeMember));
+        MemberVerifier verifyOneYear = new MemberVerifier(List.of(activeMember));
 
         // Testa aktiv medlem
-        assertEquals("Nuvarande medlem: Platina", verifier.verifyMemberStatus(activeMember));
+        assertEquals("Nuvarande medlem: Platina", verifyOneYear.verifyMemberStatus(activeMember));
 
         // Testa obehörig
-        assertEquals("Obehörig!", verifier.verifyMemberStatus(null));
+        assertEquals("Obehörig!", verifyOneYear.verifyMemberStatus(null));
     }
 }
