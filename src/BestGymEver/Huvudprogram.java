@@ -28,8 +28,12 @@ public class Huvudprogram {
             IO.println("Skriv personnummer (YYYYMMDD-XXXX) eller namn (FÖRNAMN EFTERNAMN)");
             String input = sc.nextLine().trim();
 
-            Member member = null;
+            if (input.isEmpty()) {
+                IO.println("Fel: Tom inmatning");
+                return;
+            }
 
+            Member member = null;
             // Kolla om input är personnummer eller namn
             if (input.contains("-")) {
                 member = verifier.findMember(input);
