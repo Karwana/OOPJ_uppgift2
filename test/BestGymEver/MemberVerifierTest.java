@@ -11,37 +11,52 @@ class MemberVerifierTest {
 
     @Test
     void findMemberExistsTest() {
-        Member activeMemberFredrik = new Member("Fredrik Berggren", "Skolgränd 8", "fredde@fakemail.se",
-                "851020-6728", LocalDate.of(2023, 10, 20), LocalDate.now().minusDays(20), "Platina");
 
-        MemberVerifier memberExists = new MemberVerifier(List.of(activeMemberFredrik));
+        Member fredrik = new Member(
+                "Fredrik Berggren", "Skolgränd 8", "fredde@fakemail.se",
+                "851020-6728", LocalDate.of(2023, 10, 20),
+                LocalDate.now().minusDays(20), "Platina"
+        );
 
-        // Testa att medlem med personnummer finns
-        assertEquals(activeMemberFredrik, memberExists.findMember("851020-6728"));
+        // lista som innehåller Fredrik
+        MemberVerifier verifier = new MemberVerifier(List.of(fredrik));
+
+
+        assertEquals(fredrik, verifier.findMember("851020-6728"));
     }
 
     @Test
     void findMemberNotExistsTest() {
-        Member fredrik = new Member("Fredrik Berggren", "Skolgränd 8", "fredde@fakemail.se",
-                "851020-6728", LocalDate.of(2023, 10, 20), LocalDate.now().minusDays(20), "Platina");
 
-        MemberVerifier memberNotExists = new MemberVerifier(List.of(fredrik));
+        Member fredrik = new Member(
+                "Fredrik Berggren", "Skolgränd 8", "fredde@fakemail.se",
+                "851020-6728", LocalDate.of(2023, 10, 20),
+                LocalDate.now().minusDays(20), "Platina"
+        );
 
-        // Testa att medlem med okänt personnummer inte finns
-        assertNull(memberNotExists.findMember("000000-0000"));
+
+        MemberVerifier verifier = new MemberVerifier(List.of(fredrik));
+
+        // okänt personnummer
+        assertNull(verifier.findMember("000000-0000"));
     }
 
     @Test
     void verifyMemberStatusTest() {
-        Member activeMember = new Member("Fredrik Berggren", "Skolgränd 8", "fredde@fakemail.se",
-                "851020-6728", LocalDate.of(2023, 10, 20), LocalDate.now().minusDays(20), "Platina");
 
-        MemberVerifier verifyOneYear = new MemberVerifier(List.of(activeMember));
+        Member fredrik = new Member(
+                "Fredrik Berggren", "Skolgränd 8", "fredde@fakemail.se",
+                "851020-6728", LocalDate.of(2023, 10, 20),
+                LocalDate.now().minusDays(20), "Platina"
+        );
 
-        // Testa aktiv medlem
-        assertEquals("Nuvarande medlem: Platina", verifyOneYear.verifyMemberStatus(activeMember));
 
-        // Testa obehörig
-        assertEquals("Obehörig!", verifyOneYear.verifyMemberStatus(null));
+        MemberVerifier verifier = new MemberVerifier(List.of(fredrik));
+
+        // aktiv medlem
+        assertEquals("Nuvarande medlem: Platina", verifier.verifyMemberStatus(fredrik));
+
+        // obehörig
+        assertEquals("Obehörig!", verifier.verifyMemberStatus(null));
     }
 }

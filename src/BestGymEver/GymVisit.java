@@ -3,10 +3,10 @@ package BestGymEver;
 import java.time.LocalDate;
 
 public class GymVisit {
-    private String memberName;
-    private String personnummer;
-    private String membershipType;
-    private LocalDate visitDate;
+    private final String memberName;
+    private final String personnummer;
+    private final String membershipType;
+    private final LocalDate visitDate;
 
     public GymVisit(String memberName, String membershipType, String personnummer, LocalDate visitDate) {
         this.memberName = memberName;

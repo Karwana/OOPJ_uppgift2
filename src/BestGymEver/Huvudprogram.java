@@ -39,7 +39,7 @@ public class Huvudprogram {
             if (input.contains("-")) {
                 member = verifier.findMember(input);
             } else {
-                String[] nameParts = input.split(" ", 2);
+                String[] nameParts = input.split(" ", 2); //mellanslag
                 if (nameParts.length == 2) {
                     member = verifier.findMember(nameParts[0], nameParts[1]);
                 }
