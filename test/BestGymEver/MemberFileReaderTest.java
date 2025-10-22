@@ -42,7 +42,7 @@ public class MemberFileReaderTest {
 
     @Test
     void fileNotFoundTest() {
-        Path invalid = Paths.get("test/BestGymEver/does_not_exist.txt");
+        Path invalid = Paths.get("test/BestGymEver/does_not_exist.txt"); // dummy
         List<Member> memberList = r.read(invalid);
         assertNull(memberList);
     }

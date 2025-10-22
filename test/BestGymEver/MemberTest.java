@@ -13,7 +13,7 @@ class MemberTest {
         Member activeMember = new Member("Fredrik Berggren", "Skolgränd 8, 16819 Norrköping", "fredde@fakemail.se", "851020-6728",
                 LocalDate.of(2023, 10, 20),  // startdatum
                 LocalDate.of(2025, 4, 1),    // senaste betalning
-                "Platina");                                         // memberType
+                "Platina");                                         // memberTyp
 
         assertTrue(activeMember.isActiveMember());
     }
@@ -22,9 +22,9 @@ class MemberTest {
     void memberInactiveTest() {
 
         Member inactiveMember = new Member("Fredrik Berggren", "Skolgränd 8, 16819 Norrköping", "fredde@fakemail.se", "851020-6728",
-                LocalDate.of(2022, 10, 20),  // startdatum
-                LocalDate.of(2023, 4, 1),    // senaste betalning
-                "Platina");                                         // memberType
+                LocalDate.of(2022, 10, 20),
+                LocalDate.of(2023, 4, 1),
+                "Platina");
 
         assertFalse(inactiveMember.isActiveMember());
 
@@ -34,9 +34,9 @@ class MemberTest {
     void memberInactiveAfterOneYearTest() {
 
         Member inactiveMemberAfterOneYear = new Member("Fredrik Berggren", "Skolgränd 8, 16819 Norrköping", "fredde@fakemail.se", "851020-6728",
-                LocalDate.of(2022, 10, 20),  // startdatum
-                LocalDate.now().minusYears(1),    // senaste betalning
-                "Platina");                                         // memberType
+                LocalDate.of(2022, 10, 20),
+                LocalDate.now().minusYears(1),
+                "Platina");
 
         assertFalse(inactiveMemberAfterOneYear.isActiveMember());
 
