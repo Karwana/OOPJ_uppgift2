@@ -1,23 +1,22 @@
 package BestGymEver;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
 
 public class GymVisit {
     private String memberName;
     private String personnummer;
+    private String membershipType;
     private LocalDate visitDate;
-    private LocalTime visitTime;
 
-    public GymVisit(String memberName, String personnummer, LocalDate visitDate) {
+    public GymVisit(String memberName, String membershipType, String personnummer, LocalDate visitDate) {
         this.memberName = memberName;
+        this.membershipType = membershipType;
         this.personnummer = personnummer;
         this.visitDate = visitDate;
-        this.visitTime = LocalTime.now();
     }
 
-    public LocalTime getVisitTime() {
-        return visitTime;
+    public String getMembershipType() {
+        return membershipType;
     }
 
     public String getMemberName() {

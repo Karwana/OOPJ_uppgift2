@@ -8,15 +8,16 @@ public class GymVisitWriter {
 
     private String filePath = "src/BestGymEver/gym_visits.txt";
 
-    public void writeVisit(GymVisit visitor, String platina) {
+    public void setFilePath(String filePath) {
+        this.filePath = filePath;
+    }
 
-        String line = visitor.getMemberName() + " (" + visitor.getPersonnummer() + ") - " +
-                visitor.getVisitDate().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")) + " " +
-                visitor.getVisitTime().format(DateTimeFormatter.ofPattern("HH:mm"));
+    public void writeVisit(GymVisit visitor) {
+        String line = visitor.getMemberName() + ", " + visitor.getMembershipType() + ", (" + visitor.getPersonnummer() + "), " +
+                visitor.getVisitDate().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 
         try (FileWriter writer = new FileWriter(filePath, true)) {
             writer.write(line + "\n");
-
         } catch (IOException e) {
             System.err.println("Kunde inte skriva till fil: " + e.getMessage());
         }
