@@ -33,7 +33,8 @@ public class Huvudprogram {
                 return;
             }
 
-            Member member = null;
+            Member member = null; // placeholder
+
             // Kolla om input är personnummer eller namn
             if (input.contains("-")) {
                 member = verifier.findMember(input);

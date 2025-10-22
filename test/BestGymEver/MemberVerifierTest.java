@@ -12,7 +12,7 @@ class MemberVerifierTest {
     @Test
     void findMemberExistsTest() {
         Member activeMemberFredrik = new Member("Fredrik Berggren", "Skolgränd 8", "fredde@fakemail.se",
-                "851020-6728", LocalDate.of(2023,10,20), LocalDate.now().minusDays(20), "Platina");
+                "851020-6728", LocalDate.of(2023, 10, 20), LocalDate.now().minusDays(20), "Platina");
 
         MemberVerifier memberExists = new MemberVerifier(List.of(activeMemberFredrik));
 
@@ -23,7 +23,7 @@ class MemberVerifierTest {
     @Test
     void findMemberNotExistsTest() {
         Member fredrik = new Member("Fredrik Berggren", "Skolgränd 8", "fredde@fakemail.se",
-                "851020-6728", LocalDate.of(2023,10,20), LocalDate.now().minusDays(20), "Platina");
+                "851020-6728", LocalDate.of(2023, 10, 20), LocalDate.now().minusDays(20), "Platina");
 
         MemberVerifier memberNotExists = new MemberVerifier(List.of(fredrik));
 
