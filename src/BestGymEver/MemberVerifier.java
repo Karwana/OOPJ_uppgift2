@@ -26,7 +26,7 @@ public class MemberVerifier {
         if (firstName == null || lastName == null) return null;
 
         String fullName = firstName + " " + lastName;
-        for (Member currentMember : members) { // <-- här var felet
+        for (Member currentMember : members) {
             if (fullName.equalsIgnoreCase(currentMember.getNamn())) {
                 return currentMember;
             }
